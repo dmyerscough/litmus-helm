@@ -1,4 +1,4 @@
-{{ if eq .Values.operatorMode "namespaced" }}
+{{ if and .Values.rbac.create (eq .Values.operatorMode "namespaced") }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
